@@ -1,0 +1,25 @@
+@* @{
+  Layout = "_Layout";
+}
+
+@using PierresTreats.Models;
+@model IEnumerable<PierresTreats.Models.Patron>;
+  <h1>Items for @User.Identity.Name</h1>
+
+  @if (Model.Any())
+  {
+    <ul>
+      @foreach (Patron patron in Model)
+      {
+        <li>@Html.ActionLink($"{patron.PatronName}", "Details", new { id = patron.PatronId })</li>
+      }
+    </ul>
+  } 
+  else
+  {
+    <h3>No patrons have been added yet!</h3>
+  }
+
+  <p>@Html.ActionLink("Add new patron", "Create")</p>
+
+  <p>@Html.ActionLink("Home", "Index", "Home")</p> *@

@@ -1,0 +1,37 @@
+@* @{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Book;
+
+<h2>Book Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.BookTitle): @Html.DisplayFor(model => model.BookTitle)</h3>
+<h4>@Html.DisplayNameFor(model => model.Tagline): @Html.DisplayFor(model => model.Tagline)</h4>
+
+@if(@Model.JoinAuthorBook.Count == 0)
+{
+  <p>There is not an author currently assigned to this title.</p>
+}
+else
+{
+  <h4>Written by:</h4>
+  <ul class="BookFineDetails">
+  @foreach(var join in Model.JoinAuthorBook)
+  {
+    <li>@join.Author.AuthorName</li>
+  }
+ 
+  </ul>
+  <p>Published @Html.DisplayFor(model => model.DatePublished)</p>
+}
+<p>@Html.DisplayFor(model => model.Synopsis)</p>
+
+<p> @Html.DisplayFor(model => model.Category) | @Html.DisplayFor(model => model.SubCategory)</p>
+
+<p>In Stock: @Html.DisplayFor(model => model.BookStock)</p>
+
+
+<p>@Html.ActionLink("Back to books", "Index")</p>
+<p>@Html.ActionLink("Edit Book", "Edit", new { id = Model.BookId })</p>
+<p>@Html.ActionLink("Delete Book", "Delete", new { id = Model.BookId })</p> *@

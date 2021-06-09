@@ -1,0 +1,75 @@
+/* Header Styles */
+header {
+  background-color: rgb(214, 214, 214);
+  width: 100%;
+}
+
+.page-title {
+  display: inline;
+  line-height: 70px;
+}
+
+.nav {
+  list-style-type: none;
+  float: right;
+  min-width: 50%;
+  max-width: 70%;
+}
+.nav-item {
+  display: block;
+  float: left;
+  height: 70px;
+}
+
+.nav-link {
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 70px;
+}
+
+/* .nav-item:active .nav-link {
+  font-weight: 800;
+} */
+
+/* Main Styles */
+main {
+  padding-top: 25px;
+}
+
+/* Form Styles */
+
+form {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+}
+
+form input {
+  width: 100%;
+
+  margin: 15px 0px;
+}
+
+form input:focus,
+form textarea:focus {
+  font-weight: 700;
+}
+
+form textarea {
+  max-height: 250px;
+  min-height: 250px;
+  overflow: scroll;
+  width: 100%;
+}
+
+/* Footer Styles */
+footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  color: #ccc;
+  background: #333;
+  padding: 8px;
+}
