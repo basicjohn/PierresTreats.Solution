@@ -6,18 +6,18 @@ using System.Linq;
 
 namespace PierresTreats.Controllers
 {
-  public class BooksController : Controller
+  public class TreatsController : Controller
   {
     private readonly PierresTreatsContext _db;
 
-    public BooksController(PierresTreatsContext db)
+    public TreatsController(PierresTreatsContext db)
     {
       _db = db;
     }
 
     public ActionResult Index()
     {
-      List<Book> model = _db.Book.ToList();
+      List<Treat> model = _db.Treat.ToList();
       return View(model);
     }
 
@@ -28,46 +28,46 @@ namespace PierresTreats.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Book book)
+    public ActionResult Create(Treat treat)
     {
-      _db.Book.Add(book);
+      _db.Treat.Add(treat);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
     {
-      var thisBook = _db.Book
-          .Include(book => book.JoinAuthorBook)
-          .ThenInclude(join => join.Author)
-          .FirstOrDefault(book => book.BookId == id);
-      return View(thisBook);
+      var thisTreat = _db.Treat
+          .Include(treat => treat.JoinFlavorTreat)
+          .ThenInclude(join => join.Flavor)
+          .FirstOrDefault(treat => treat.TreatId == id);
+      return View(thisTreat);
     }
     public ActionResult Edit(int id)
     {
-      var thisBook = _db.Book.FirstOrDefault(book => book.BookId == id);
-      return View(thisBook);
+      var thisTreat = _db.Treat.FirstOrDefault(treat => treat.TreatId == id);
+      return View(thisTreat);
     }
 
     [HttpPost]
-    public ActionResult Edit(Book book)
+    public ActionResult Edit(Treat treat)
     {
-      _db.Entry(book).State = EntityState.Modified;
+      _db.Entry(treat).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Delete(int id)
     {
-      var thisBook = _db.Book.FirstOrDefault(book => book.BookId == id);
-      return View(thisBook);
+      var thisTreat = _db.Treat.FirstOrDefault(treat => treat.TreatId == id);
+      return View(thisTreat);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      var thisBook = _db.Book.FirstOrDefault(book => book.BookId == id);
-      _db.Book.Remove(thisBook);
+      var thisTreat = _db.Treat.FirstOrDefault(treat => treat.TreatId == id);
+      _db.Treat.Remove(thisTreat);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }

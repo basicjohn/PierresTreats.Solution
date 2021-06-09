@@ -8,8 +8,8 @@ namespace PierresTreats.Models
     public virtual DbSet<Flavor> Flavor { get; set; }
     public DbSet<Treat> Treat { get; set; }
     public DbSet<FlavorTreat> FlavorTreat { get; set; }
-    public DbSet<Patron> Patron { get; set; }
-    public DbSet<Checkout> Checkout { get; set; }
+    // public DbSet<Patron> Patron { get; set; }
+    // public DbSet<Checkout> Checkout { get; set; }
 
     public PierresTreatsContext(DbContextOptions options) : base(options) { }
 
