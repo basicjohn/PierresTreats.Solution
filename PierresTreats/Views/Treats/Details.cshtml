@@ -30,6 +30,7 @@ else
 
   <p>In Stock: @Html.DisplayFor(model => model.TreatStock)</p>
 *@
+<p>@Html.ActionLink("Add a Flavor", "AddFlavor", new { id = Model.TreatId })</p>
 
 <p>@Html.ActionLink("Back to treats", "Index")</p>
 <p>@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId })</p>
