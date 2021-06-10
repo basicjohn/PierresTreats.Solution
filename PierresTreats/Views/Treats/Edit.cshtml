@@ -1,34 +1,40 @@
 <div class="offset-sm-2 col-sm-8 offset-md-3 col-md-6 offset-lg-4 col-lg-4">
-@{
-  Layout = "_Layout";
-}
+  @{
+    Layout = "_Layout";
+  }
 
-@model PierresTreats.Models.Treat
+  @model PierresTreats.Models.Treat
 
-<h2>Edit</h2>
+  <h2>Edit</h2>
 
-<h4>Edit this treat: @Html.DisplayFor(model => model.TreatTitle)</h4>
+  <h4>Edit this treat: @Html.DisplayFor(model => model.TreatName)</h4>
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.TreatId)
-  @Html.DropDownList("Category", new List<SelectListItem>
-  {
-  new SelectListItem { Text = @Html.DisplayNameFor(m=>m.Category), Selected=true, Disabled = true},
-  new SelectListItem { Text = "Fiction", Value = "Fiction"},
-  new SelectListItem { Text = "Non-Fiction", Value = "Non-Fiction"},
-  }, new { @class="form-control"})
+  @* @using (Html.BeginForm())
+    {
+    @Html.HiddenFor(model => model.TreatId)
+    @Html.DropDownList("Category", new List<SelectListItem>
+    {
+    new SelectListItem { Text = @Html.DisplayNameFor(m=>m.Category), Selected=true, Disabled = true},
+    new SelectListItem { Text = "Fiction", Value = "Fiction"},
+    new SelectListItem { Text = "Non-Fiction", Value = "Non-Fiction"},
+    }, new { @class="form-control"})
 
-  @Html.TextBoxFor(model => model.SubCategory, new { @class = "form-control", placeholder = @Html.DisplayNameFor(m=>m.SubCategory), required="required"})
-  @Html.TextBoxFor(model => model.TreatTitle, new { @class = "form-control", placeholder = @Html.DisplayNameFor(m=>m.TreatTitle), required="required"})
-  @Html.TextBoxFor(model => model.Tagline, new { @class = "form-control", placeholder = @Html.DisplayNameFor(m=>m.Tagline), required="required"})
-  @Html.TextAreaFor(model => model.Synopsis, new { @class = "form-control", placeholder = @Html.DisplayNameFor(m=>m.Synopsis), required="required"})
-  @Html.TextBoxFor(model => model.DatePublished, new { onfocus="(this.type='date')" , @class = "form-control", placeholder = @Html.DisplayNameFor(m=>m.DatePublished), required="required", max = @Html.DisplayFor(m=>m.DatePublished) })
-  
-  @Html.TextBoxFor(model => model.TreatStock, new { @class = "form-control", placeholder = @Html.DisplayNameFor(m=>m.TreatStock), required="required"})
+    @Html.TextBoxFor(model => model.SubCategory, new { @class = "form-control", placeholder =
+    @Html.DisplayNameFor(m=>m.SubCategory), required="required"})
+    @Html.TextBoxFor(model => model.TreatTitle, new { @class = "form-control", placeholder =
+    @Html.DisplayNameFor(m=>m.TreatTitle), required="required"})
+    @Html.TextBoxFor(model => model.Tagline, new { @class = "form-control", placeholder =
+    @Html.DisplayNameFor(m=>m.Tagline), required="required"})
+    @Html.TextAreaFor(model => model.Synopsis, new { @class = "form-control", placeholder =
+    @Html.DisplayNameFor(m=>m.Synopsis), required="required"})
+    @Html.TextBoxFor(model => model.DatePublished, new { onfocus="(this.type='date')" , @class = "form-control",
+    placeholder = @Html.DisplayNameFor(m=>m.DatePublished), required="required", max =
+    @Html.DisplayFor(m=>m.DatePublished) })
 
+    @Html.TextBoxFor(model => model.TreatStock, new { @class = "form-control", placeholder =
+    @Html.DisplayNameFor(m=>m.TreatStock), required="required"})
+  *@
   <input type="submit" value="Save" />
-}
-<p>@Html.ActionLink("Back to list", "Index")</p>
+  }
+  <p>@Html.ActionLink("Back to list", "Index")</p>
 </div>
-

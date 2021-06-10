@@ -12,8 +12,8 @@ namespace PierresTreats.Models
     }
     public int TreatId { get; set; }
     // Fiction or non-Fiction
-    [Display(Name = "Flavor Profile")]
-    public string FlavorName { get; set; }
+    [Display(Name = "Treat")]
+    public string TreatName { get; set; }
     // Types of Fiction or non-Fiction
     public virtual ApplicationUser User { get; set; }
     public virtual ICollection<FlavorTreat> JoinEntities { get; }
