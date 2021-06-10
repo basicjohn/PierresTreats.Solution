@@ -10,7 +10,7 @@ namespace PierresTreats.Models
       this.JoinEntities = new HashSet<FlavorTreat>();
     }
     public int FlavorId { get; set; }
-    [Display(Name = "Flavor Name")]
+    [Display(Name = "Flavor Profile")]
     public string FlavorName { get; set; }
     public virtual ICollection<FlavorTreat> JoinEntities { get; set; }
     public virtual ApplicationUser User { get; set; }

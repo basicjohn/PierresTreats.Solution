@@ -4,14 +4,14 @@ using Microsoft.AspNetCore.Mvc;
 using PierresTreats.Models;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.AspNetCore.Flavorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using System.Security.Claims;
 
 namespace PierresTreats.Controllers
 {
-  [Flavorize]
+  [Authorize]
   public class FlavorsController : Controller
   {
     private readonly PierresTreatsContext _db;
@@ -56,7 +56,7 @@ namespace PierresTreats.Controllers
     public ActionResult Details(int id)
     {
       var thisFlavor = _db.Flavor
-          .Include(flavor => flavor.JoinFlavorTreat)
+          .Include(flavor => flavor.JoinEntities)
           .ThenInclude(join => join.Treat)
           .FirstOrDefault(flavor => flavor.FlavorId == id);
       return View(thisFlavor);

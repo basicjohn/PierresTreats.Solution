@@ -1,0 +1,17 @@
+@* <div class="offset-md-3 col-md-6">
+  @{
+    Layout = "_Layout";
+  }
+
+  @model PierresTreats.Models.Flavor
+  <h4>Add a new Flavor</h4>
+
+  @using (Html.BeginForm())
+  {
+    @Html.TextBoxFor(model => model.FlavorName, new { @class = "form-control", placeholder =
+  @Html.DisplayNameFor(m=>m.FlavorName), required="required"})
+
+    <input type="submit" value="Create" class="btn btn-primary" />
+  }
+  <p>@Html.ActionLink("Show all Flavors", "Index")</p>
+</div> *@

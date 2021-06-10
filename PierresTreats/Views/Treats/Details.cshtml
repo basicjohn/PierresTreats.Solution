@@ -1,0 +1,37 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Treat;
+
+<h2>Treat Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.TreatTitle): @Html.DisplayFor(model => model.TreatTitle)</h3>
+<h4>@Html.DisplayNameFor(model => model.Tagline): @Html.DisplayFor(model => model.Tagline)</h4>
+
+@if(@Model.JoinFlavorTreat.Count == 0)
+{
+  <p>There is not an author currently assigned to this title.</p>
+}
+else
+{
+  <h4>Written by:</h4>
+  <ul class="TreatFineDetails">
+  @foreach(var join in Model.JoinFlavorTreat)
+  {
+    <li>@join.Flavor.FlavorName</li>
+  }
+ 
+  </ul>
+  <p>Published @Html.DisplayFor(model => model.DatePublished)</p>
+}
+<p>@Html.DisplayFor(model => model.Synopsis)</p>
+
+<p> @Html.DisplayFor(model => model.Category) | @Html.DisplayFor(model => model.SubCategory)</p>
+
+<p>In Stock: @Html.DisplayFor(model => model.TreatStock)</p>
+
+
+<p>@Html.ActionLink("Back to treats", "Index")</p>
+<p>@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId })</p>
+<p>@Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatId })</p>
