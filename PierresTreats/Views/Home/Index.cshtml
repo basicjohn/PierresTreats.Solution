@@ -4,45 +4,42 @@
 
 <div class="row">
   <div class="col-md-6">
-    <button>All Treats</button>
+    <h2>All Treats</h2>
 
-    @foreach (var treat in Model.Treat)
+    @foreach (var treat in ViewBag.Treat)
     {
       <li>@treat.TreatName</li>
     }
   </div>
   <div class="col-md-6">
-    <button>All Flavors</button>
+    <h2>All Flavors</h2>
 
-    @foreach (var flavor in Model.Flavor)
+    @foreach (var flavor in ViewBag.Flavor)
     {
       <li>@flavor.FlavorName</li>
     }
   </div>
 
 </div>
+<hr>
+<div class="row">
+  <div class="col-md-4"><a href='@Url.Action("AIndex", "Treats")' role="button" class="btn btn-dark">See all
+      Treats</a>
+  </div>
+  <div class="col-md-4"><a href='@Url.Action("Index", "Flavors")' role="button" class="btn btn-dark">See all
+      Flavors</a>
+  </div>
+  <div class="col-md-4"><a href='@Url.Action("Register","Account")' role="button" class="btn btn-dark">Create an
+      account</a>
+  </div>
+</div>
 
 
-
-<p>@Html.ActionLink("See all Treats", "Index", "Treats")</p>
-<p>@Html.ActionLink("See all Flavors", "Index", "Flavors")</p>
-<p>@Html.ActionLink("Create an account", "Register", "Account")</p>
-
-
-  <a href='@Url.Action("AIndex", "Treats", new { id = Model.MachineId })' role="button"
-    class="btn btn-warning">See all Treats</a>
+@*
+  <a href='@Url.Action("AIndex", "Treats", new { id = Model.MachineId })' role="button" class="btn btn-warning">See all
+  Treats</a>
   <a href='@Url.Action("Index", "Flavors")' role="button" class="btn btn-warning">Back to Machines</a>
-  <a href='@Url.Action("Edit","Machines")' role="button" class="btn btn-warning">See all Flavors</a>
-  <a href='@Url.Action("Register","Account")' role="button" class="btn btn-warning">Create an account</a>
-
-
-
-
-
-
-      <a href='@Url.Action("AIndex", "Treats", new { id = Model.MachineId })' role="button"
-    class="btn btn-warning">See all Treats</a>
-  <a href='@Url.Action("Index", "Flavors")' role="button" class="btn btn-warning">Back to Machines</a>
-  <a href='@Url.Action("Edit","Machines", new { id = Model.MachineId })' role="button" class="btn btn-warning">See all Flavors</a>
+  <a href='@Url.Action("Edit","Machines", new { id = Model.MachineId })' role="button" class="btn btn-warning">See all
+  Flavors</a>
   <a href='@Url.Action("Register","Account", new { id = Model.MachineId })' role="button" class="btn btn-warning">Delete
-    Machine</a>
+  Machine</a> *@

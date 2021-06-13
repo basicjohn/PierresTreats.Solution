@@ -82,10 +82,6 @@ namespace PierresTreats.Controllers
       return RedirectToAction("Index");
     }
 
-
-
-
-
     public ActionResult Delete(int id)
     {
       var thisTreat = _db.Treat.FirstOrDefault(treat => treat.TreatId == id);
