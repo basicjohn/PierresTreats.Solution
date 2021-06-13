@@ -27,13 +27,13 @@ header {
   line-height: 70px;
 }
 
-/* .nav-item:active .nav-link {
-  font-weight: 800;
-} */
-
 /* Main Styles */
 main {
   padding-top: 25px;
+}
+
+a.btn {
+  width: 100%;
 }
 
 /* Form Styles */

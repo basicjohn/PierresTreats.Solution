@@ -17,15 +17,15 @@ namespace PierresTreats.Controllers
     private readonly PierresTreatsContext _db;
     private readonly UserManager<ApplicationUser> _userManager;
 
-    public TreatsController(PierresTreatsContext db)
+    public TreatsController(UserManager<ApplicationUser> userManager, PierresTreatsContext db)
     {
       _db = db;
     }
-
+    [AllowAnonymous]
     public ActionResult Index()
     {
-      List<Treat> model = _db.Treat.ToList();
-      return View(model);
+      ViewBag.Treat = _db.Treat.ToList();
+      return View();
     }
 
     public ActionResult Create()

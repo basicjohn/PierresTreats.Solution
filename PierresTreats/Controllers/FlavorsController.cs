@@ -22,13 +22,11 @@ namespace PierresTreats.Controllers
       _userManager = userManager;
       _db = db;
     }
-
-    public async Task<ActionResult> Index()
+    [AllowAnonymous]
+    public ActionResult Index()
     {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-      var userFlavors = _db.Flavor.Where(entry => entry.User.Id == currentUser.Id).ToList();
-      return View(userFlavors);
+      ViewBag.Flavor = _db.Flavor.ToList();
+      return View();
     }
 
     public ActionResult Create()
