@@ -16,7 +16,7 @@
 
 ## Description
 
-_This project is created to be an app written in C# to list all of ._
+_This project is created to be an app written in C# to list all of Treats and Flavor each treat._
 
 ## Setup and Use
 
@@ -38,14 +38,14 @@ _This project is created to be an app written in C# to list all of ._
    - Finally, run the command `dotnet run` to run the project!
    - Note: `dotnet run` also restores and builds the project, so you can use this single command to start the console app
 
-### Database Creation Instructions
+<!-- ### Database Creation Instructions
 
 1. Open MySql WorkBench application
 2. On the Administration tab click 'Data Import/Restore' menu item
 3. Select radio button for 'Import from Self-Contained File'
 4. Click the two dots to select the export file title john_edmondson.sql dump file from this project root directory
 5. Click on 'New' and name the database schema john_edmondson
-6. Click 'Start Import' button
+6. Click 'Start Import' button -->
 
 ## Known Bugs
 

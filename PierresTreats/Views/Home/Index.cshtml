@@ -1,6 +1,26 @@
 @{
   Layout = "_Layout";
 }
+
+<div class="row">
+  <div class="col-md-12">
+    <button>All Treats</button>
+
+    @foreach (var join in Model.JoinBookPatron)
+    {
+      <li>@join.Book.BookTitle</li>
+      @using (Html.BeginForm("DeleteBook", "Patrons"))
+      {
+        @Html.Hidden("joinId", @join.CheckoutId)
+        <input type="submit" value="Delete" />
+      }
+    }
+  </div>
+
+</div>
+
+
+
 <p>@Html.ActionLink("See all Treats", "Index", "Treats")</p>
 <p>@Html.ActionLink("See all Flavors", "Index", "Flavors")</p>
 <p>@Html.ActionLink("Create an account", "Register", "Account")</p>
