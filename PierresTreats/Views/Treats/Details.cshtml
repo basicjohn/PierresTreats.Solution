@@ -24,14 +24,28 @@ else
 
   </ul>
 }
-@* <p>@Html.DisplayFor(model => model.Synopsis)</p>
-
-  <p> @Html.DisplayFor(model => model.Category) | @Html.DisplayFor(model => model.SubCategory)</p>
-
-  <p>In Stock: @Html.DisplayFor(model => model.TreatStock)</p>
-*@
-<p>@Html.ActionLink("Add a Flavor", "AddFlavor", new { id = Model.TreatId })</p>
-
-<p>@Html.ActionLink("Back to treats", "Index")</p>
-<p>@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId })</p>
-<p>@Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatId })</p>
+<hr>
+<div class="row">
+  <div class="col-md-4"><a href='@Url.Action("AddFlavor", "Treats")' role="button" class="btn btn-dark">Connect Treat
+      To
+      Flavor</a>
+  </div>
+  <div class="col-md-4"><a href='@Url.Action("Edit", "Treats", new { id = Model.TreatId })' role="button"
+      class="btn btn-dark">Edit Treat</a>
+  </div>
+  <div class="col-md-4"><a href='@Url.Action("Delete","Treats", new { id = Model.TreatId })' role="button"
+      class="btn btn-dark">Delete Treat</a>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-4"><a href='@Url.Action("Index", "Treats")' role="button" class="btn btn-dark">View All
+      Treats</a>
+  </div>
+  <div class="col-md-4"><a href='@Url.Action("Index", "Flavors")' role="button" class="btn btn-dark">View All
+      Flavors</a>
+  </div>
+  <div class="col-md-4"><a href='@Url.Action("Index","Home")' role="button" class="btn btn-dark">Back To
+      Homepage</a>
+  </div>
+</div>

@@ -17,5 +17,15 @@
 
     <input type="submit" value="Save" class="btn btn-primary" />
   }
-
-  <p>@Html.ActionLink("Back to list", "Index")</p>
+  <hr>
+  <div class="row">
+    <div class="col-md-4"><a href='@Url.Action("Index", "Treats")' role="button" class="btn btn-dark">View All
+        Treats</a>
+    </div>
+    <div class="col-md-4"><a href='@Url.Action("Index", "Flavors")' role="button" class="btn btn-dark">View All
+        Flavors</a>
+    </div>
+    <div class="col-md-4"><a href='@Url.Action("Index","Home")' role="button" class="btn btn-dark">Back To
+        Homepage</a>
+    </div>
+  </div>

@@ -9,21 +9,6 @@
 @if (User.Identity.IsAuthenticated)
 {
   <p>Hello @User.Identity.Name!</p>
-
-  @* <button>Check out Books!</button>
-
-  <p>Books checked out</p>
-
-  @foreach (var join in Model.JoinBookPatron)
-  {
-  <li>@join.Book.BookTitle</li>
-  @using (Html.BeginForm("DeleteBook", "Patrons"))
-  {
-  @Html.Hidden("joinId", @join.CheckoutId)
-  <input type="submit" value="Delete" />
-  }
-  }
-*@
   @using (Html.BeginForm("LogOff", "Account"))
   {
     <input type="submit" class="btn btn-default" value="Log out" />

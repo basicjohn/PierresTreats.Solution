@@ -17,6 +17,14 @@
     <li>@Html.ActionLink($"{treat.TreatName}", "Details", new { id = treat.TreatId })</li>
   }
 </ul>
-
-<p>@Html.ActionLink("Add new treat", "Create")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<hr>
+<div class="row">
+  <div class="col-md-4"><a href='@Url.Action("Create", "Treats")' role="button" class="btn btn-dark">Add New Treat</a>
+  </div>
+  <div class="col-md-4"><a href='@Url.Action("Index", "Flavors")' role="button" class="btn btn-dark">View All
+      Flavors</a>
+  </div>
+  <div class="col-md-4"><a href='@Url.Action("Index","Home")' role="button" class="btn btn-dark">Back To
+      Homepage</a>
+  </div>
+</div>
