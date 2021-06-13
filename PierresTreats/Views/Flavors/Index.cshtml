@@ -6,8 +6,6 @@
 @model IEnumerable<PierresTreats.Models.Flavor>;
 <h1>Flavors:</h1>
 
-@* @if (Model.Any())
-  { *@
 <ul>
   @foreach (var flavor in ViewBag.Flavor)
   {
@@ -16,14 +14,15 @@
 </ul>
 
 
-<ul>
-
-  @* }
-    else
-    {
-    <h3>No flavors have been added yet!</h3>
-    } *@
-
-  <p>@Html.ActionLink("Add new flavor", "Create")</p>
-
-  <p>@Html.ActionLink("Home", "Index", "Home")</p>
+<hr>
+<div class="row">
+  <div class="col-md-4"><a href='@Url.Action("Index", "Treats")' role="button" class="btn btn-dark">View All
+      Treats</a>
+  </div>
+  <div class="col-md-4"><a href='@Url.Action("Create", "Flavors")' role="button" class="btn btn-dark">Add New
+      Flavor</a>
+  </div>
+  <div class="col-md-4"><a href='@Url.Action("Index","Home")' role="button" class="btn btn-dark">Back To
+      Homepage</a>
+  </div>
+</div>

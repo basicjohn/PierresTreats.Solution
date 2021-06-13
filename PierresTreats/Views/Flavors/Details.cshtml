@@ -27,10 +27,28 @@ else
     }
   </ul>
 }
-
-<p>@Html.ActionLink("Add a Treat", "AddTreat", new { id = Model.FlavorId })</p>
-
-<p>@Html.ActionLink("Back to list", "Index")</p>
-<p>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId })</p>
-<p>@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId })</p>
-</main>
+<hr>
+<div class="row">
+  <div class="col-md-4"><a href='@Url.Action("AddTreat", "Flavors")' role="button" class="btn btn-dark">Connect Flavor
+      To
+      Treat</a>
+  </div>
+  <div class="col-md-4"><a href='@Url.Action("Edit", "Flavors", new { id = Model.FlavorId })' role="button"
+      class="btn btn-dark">Edit Flavor</a>
+  </div>
+  <div class="col-md-4"><a href='@Url.Action("Delete","Flavors", new { id = Model.FlavorId })' role="button"
+      class="btn btn-dark">Delete Flavor</a>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-4"><a href='@Url.Action("Index", "Treats")' role="button" class="btn btn-dark">View All
+      Treats</a>
+  </div>
+  <div class="col-md-4"><a href='@Url.Action("Index", "Flavors")' role="button" class="btn btn-dark">View All
+      Flavors</a>
+  </div>
+  <div class="col-md-4"><a href='@Url.Action("Index","Home")' role="button" class="btn btn-dark">Back To
+      Homepage</a>
+  </div>
+</div>

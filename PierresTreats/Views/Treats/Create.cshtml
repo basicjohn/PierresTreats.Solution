@@ -10,29 +10,20 @@
 
     @Html.TextBoxFor(model => model.TreatName, new { @class = "form-control", placeholder =
   @Html.DisplayNameFor(m=>m.TreatName), required="required"})
-    @* @Html.DropDownList("Category", new List<SelectListItem>
-      {
-      new SelectListItem { Text = @Html.DisplayNameFor(m=>m.Category), Selected=true, Disabled = true},
-      new SelectListItem { Text = "Fiction", Value = "Fiction"},
-      new SelectListItem { Text = "Non-Fiction", Value = "Non-Fiction"},
-      }, new { @class="form-control"})
 
-      @Html.TextBoxFor(model => model.SubCategory, new { @class = "form-control", placeholder =
-      @Html.DisplayNameFor(m=>m.SubCategory), required="required"})
-      @Html.TextBoxFor(model => model.TreatTitle, new { @class = "form-control", placeholder =
-      @Html.DisplayNameFor(m=>m.TreatTitle), required="required"})
-      @Html.TextBoxFor(model => model.Tagline, new { @class = "form-control", placeholder =
-      @Html.DisplayNameFor(m=>m.Tagline), required="required"})
-      @Html.TextAreaFor(model => model.Synopsis, new { @class = "form-control", placeholder =
-      @Html.DisplayNameFor(m=>m.Synopsis), required="required"})
-      @Html.TextBoxFor(model => model.DatePublished, new { onfocus="(this.type='date')" , @class = "form-control",
-      placeholder = @Html.DisplayNameFor(m=>m.DatePublished), required="required", max =
-      @Html.DisplayFor(m=>m.DatePublished) })
-
-      @Html.TextBoxFor(model => model.TreatStock, new { @class = "form-control", placeholder =
-      @Html.DisplayNameFor(m=>m.TreatStock), required="required"}) *@
     <input type="submit" value="Add new treat" class="btn btn-default btn-block btn-primary" />
   }
 
-  <p>@Html.ActionLink("Show all Treats", "Index")</p>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-4"><a href='@Url.Action("Index", "Treats")' role="button" class="btn btn-dark">View All
+      Treats</a>
+  </div>
+  <div class="col-md-4"><a href='@Url.Action("Index", "Flavors")' role="button" class="btn btn-dark">View All
+      Flavors</a>
+  </div>
+  <div class="col-md-4"><a href='@Url.Action("Index","Home")' role="button" class="btn btn-dark">Back To
+      Homepage</a>
+  </div>
 </div>
