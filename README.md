@@ -1,6 +1,6 @@
 # Pierre's Sweet and Savory Treats
 
-#### _This is the Dr. Sillystringz's Factory Project created by John Edmondson_
+## _This is the Pierre's Sweet and Savory Treats Project created by John Edmondson_
 
 ### Week 12 Project for the March 2021 Co-hort session: Authentication with Identity
 
@@ -9,10 +9,10 @@
 ## Technologies Used
 
 - C#
-- .NET 5 SDKgit
-- HTML
-- CSS
-- Bootstrap
+- ASP.NET Core
+- Identity for ASP.NET 5 Core
+- HTML & CSS utilizing Twitter Bootstrap
+- Git
 
 ## Description
 

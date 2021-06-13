@@ -3,17 +3,20 @@
 }
 
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-6">
     <button>All Treats</button>
 
-    @foreach (var join in Model.JoinBookPatron)
+    @foreach (var treat in Model.Treat)
     {
-      <li>@join.Book.BookTitle</li>
-      @using (Html.BeginForm("DeleteBook", "Patrons"))
-      {
-        @Html.Hidden("joinId", @join.CheckoutId)
-        <input type="submit" value="Delete" />
-      }
+      <li>@treat.TreatName</li>
+    }
+  </div>
+  <div class="col-md-6">
+    <button>All Flavors</button>
+
+    @foreach (var flavor in Model.Flavor)
+    {
+      <li>@flavor.FlavorName</li>
     }
   </div>
 
@@ -24,3 +27,22 @@
 <p>@Html.ActionLink("See all Treats", "Index", "Treats")</p>
 <p>@Html.ActionLink("See all Flavors", "Index", "Flavors")</p>
 <p>@Html.ActionLink("Create an account", "Register", "Account")</p>
+
+
+  <a href='@Url.Action("AIndex", "Treats", new { id = Model.MachineId })' role="button"
+    class="btn btn-warning">See all Treats</a>
+  <a href='@Url.Action("Index", "Flavors")' role="button" class="btn btn-warning">Back to Machines</a>
+  <a href='@Url.Action("Edit","Machines")' role="button" class="btn btn-warning">See all Flavors</a>
+  <a href='@Url.Action("Register","Account")' role="button" class="btn btn-warning">Create an account</a>
+
+
+
+
+
+
+      <a href='@Url.Action("AIndex", "Treats", new { id = Model.MachineId })' role="button"
+    class="btn btn-warning">See all Treats</a>
+  <a href='@Url.Action("Index", "Flavors")' role="button" class="btn btn-warning">Back to Machines</a>
+  <a href='@Url.Action("Edit","Machines", new { id = Model.MachineId })' role="button" class="btn btn-warning">See all Flavors</a>
+  <a href='@Url.Action("Register","Account", new { id = Model.MachineId })' role="button" class="btn btn-warning">Delete
+    Machine</a>
