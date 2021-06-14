@@ -23,29 +23,22 @@ _This project is created to be an app written in C# to list all of Treats and Fl
 ### Prerequisites
 
 - [.NET 5 SDK](https://dotnet.microsoft.com/download/dotnet/5.0/)
+- [MySQL Community Server](https://dev.mysql.com/downloads/mysql/)
 - A text editor like [VS Code](https://code.visualstudio.com/) or [Sublime Text](https://www.sublimetext.com/)
-- A command line interface like Terminal or GitBash to run and interact with the console app.
+- A command line interface like Terminal or GitBash to run the app.
 
 ### Installation
 
 1. Clone the repository: `$ git clone https://github.com/basicjohn/PierresTreats.Solution.git`
 2. Navigate to the `PierresTreats.Solution/` directory on your computer
 3. Open with your preferred text editor to view the code base
-4. To run the console app:
+4. To run the app:
    - Navigate to `PierresTreats.Solution/PierresTreats` in your command line
    - Run the command `dotnet restore` to restore the dependencies that are listed in the .csproj
+   - Run the command `dotnet ef database update` to create the database using MySQL
    - Run the commmand `dotnet build` to build the project and its dependencies into a set of binaries
    - Finally, run the command `dotnet run` to run the project!
    - Note: `dotnet run` also restores and builds the project, so you can use this single command to start the console app
-
-<!-- ### Database Creation Instructions
-
-1. Open MySql WorkBench application
-2. On the Administration tab click 'Data Import/Restore' menu item
-3. Select radio button for 'Import from Self-Contained File'
-4. Click the two dots to select the export file title john_edmondson.sql dump file from this project root directory
-5. Click on 'New' and name the database schema john_edmondson
-6. Click 'Start Import' button -->
 
 ## Known Bugs
 
